@@ -1,4 +1,4 @@
- *{
+ * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,20 +6,92 @@
  }
 
  body{
-    background-color: #f4c531;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background: linear-gradient(
+        100deg,
+        #0a3c2f,
+        #1aa37f
+     );
  }
+.container{
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 30px;
+     background: linear-gradient(
+        100deg,
+        #0d614b,
+        #0e8163
+     );
+     padding: 40px 60px;
+     box-shadow: 0px 10px 20px rgb(40, 40, 40);     
+ }
+ h2{
+   font-size: 28px;
+   color: aliceblue;
+   text-shadow: 3px -1px 3px #000000;
+   letter-spacing: 2px;
+ }
+ .reset{
+   padding: 15px 20px;
+   color: #0e8163;
+   background: white;
+   border: none;
+   font-size: 13px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   font-weight: 800;
+   cursor: pointer;
+ }
+ .reset:focus{
+   color: white;
+   background-color: #0e8163;
+ }
+ .game{
+   width: 430px;
+   height: 430px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   transform-style: preserve-3d;
+   perspective: 500px;
 
- .wrapper{
-    box-sizing: border-box;
-    width: 420px;
-    padding: 40px 48px;
-    background-color: white;
-    position: relative;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    right: 50%;
-    border-radius: 2px;
-    box-shadow: 0px 10px 20px rgb(40, 40, 40);
-
-
+ }
+ .item{
+   position: relative;
+   width: 100px;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 48px;
+   box-shadow: 0px 10px 20px rgb(40, 40, 40);
+   background: linear-gradient(
+      100deg,#000000,
+      #269271);
+   transition: 0.25s;
+ }
+ .item.boxOpen{
+   transform: rotate(0deg);
+ }
+ .item::after{
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(
+        100deg,
+        #1f6955,
+        #35947b );
+   transition: 0.25s;
+   transform: rotateY(0deg);
+   backface-visibility: hidden;
+ }
+ .boxMatch:after ,
+ .boxOpen:after{
+transform: rotateY(180deg);
  }

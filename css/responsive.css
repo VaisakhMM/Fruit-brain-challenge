@@ -1,0 +1,18 @@
+@media (max-width:400px){
+    .container {
+        height: 868px;
+        width: 450px;
+    }
+    .game {
+        width: 390px;
+        height: 379px;
+    }
+    .item{
+        height:78px;
+        width:78px
+        
+    }
+    .reset{
+        display: block;
+    }
+}
